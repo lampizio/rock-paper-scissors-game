@@ -4,7 +4,7 @@ const ITEMS = {
     scissors: "scissors",
 }
 
-const score = {
+const SCORE = {
     win: 0,
     lose: 0,
     draw: 0,
@@ -41,13 +41,13 @@ function getUserRoundStatus(computerChoice, userChoice) {
 
 function processUserRoundStatus(userRoundStatus, computerChoice, userChoice) {
     if(userRoundStatus) {
-        score.win++;
+        SCORE.win++;
         console.log(`You win\nComputer: ${computerChoice}\nYou: ${userChoice}`)
     } else if (userRoundStatus === null) {
-        score.draw++;
+        SCORE.draw++;
         console.log(`Draw\nComputer: ${computerChoice}\nYou: ${userChoice}`)
     } else {
-        score.lose++;
+        SCORE.lose++;
         console.log(`You lose\nComputer: ${computerChoice}\nYou: ${userChoice}`)
     }
 }
@@ -93,7 +93,7 @@ function main() {
 
     playGame(n);
 
-    console.table(score);
+    console.table(SCORE);
 }
 
 main();
