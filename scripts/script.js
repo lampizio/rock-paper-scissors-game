@@ -62,7 +62,7 @@ function getUserChoice() {
     let choice;
 
     do {
-    choice = prompt("Enter the item:\n- Rock/R/r\n- Paper/P/p\n- Scissors/S/s").toLowerCase();
+        choice = prompt("Enter the item:\n- Rock/R/r\n- Paper/P/p\n- Scissors/S/s").toLowerCase();
     } while (!isValidUserChoice(choice));
 
     return transformUserChoice(choice);
@@ -88,10 +88,18 @@ function transformUserChoice(choice) {
     }
 }
 
-function main() {
-    let n = parseInt(prompt("Enter the number of rounds:"))
+function getNumberOfRounds(number) {
+    do {
+        number = parseInt(prompt("Enter the number of rounds:"))
+    } while (isNaN(number) || number <= 0);
 
-    playGame(n);
+    return number;
+}
+
+function main() {
+    let number = getNumberOfRounds();
+
+    playGame(number);
 
     console.table(SCORE);
 }
