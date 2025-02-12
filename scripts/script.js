@@ -10,20 +10,25 @@ const SCORE = {
     draw: 0,
 } 
 
-function playGame(n) {
-    for (let i = 0; i < n; i++) {
-        playRound();
-    }
-}
-
-function playRound() {
+function playRound(event) {
+    let userChoice = getUserChoiceFromClass(event.target.className);
     let computerChoice = getComputerChoice();
-    let userChoice = getUserChoice();
 
     let userRoundStatus = getUserRoundStatus(computerChoice, userChoice);
 
     processUserRoundStatus(userRoundStatus, computerChoice, userChoice);
 
+}
+
+function getUserChoiceFromClass(className) {
+    switch (className) {
+        case 'rock':
+            return ITEMS.rock;
+        case 'paper':
+            return ITEMS.paper;
+        case 'scissors':
+            return ITEMS.scissors;
+    }
 }
 
 function getUserRoundStatus(computerChoice, userChoice) {
@@ -58,16 +63,6 @@ function getComputerChoice() {
     return items[randInt];
 }
 
-function getUserChoice() {
-    let choice;
-
-    do {
-        choice = prompt("Enter the item:\n- Rock/R/r\n- Paper/P/p\n- Scissors/S/s").toLowerCase();
-    } while (!isValidUserChoice(choice));
-
-    return transformUserChoice(choice);
-}
-
 function isValidUserChoice(choice) {
     return ["rock", "r", "paper", "p", "scissors", "s"].includes(choice);
 }
@@ -97,9 +92,9 @@ function getNumberOfRounds(number) {
 }
 
 function main() {
-    let number = getNumberOfRounds();
-
-    playGame(number);
+    document.querySelector(".rock").addEventListener("click", playRound);
+    document.querySelector(".paper").addEventListener("click", playRound);
+    document.querySelector(".scissors").addEventListener("click", playRound);
 
     console.table(SCORE);
 }
