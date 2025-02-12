@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <script defer src="./scripts/script.js"></script>
 
-    <div class="user-choice">
-        <button class="rock">rock</button>
-        <button class="paper">paper</button>
-        <button class="scissors">scissors</button>
+    <h1 class="title">Rock Paper Scissors</h1>
+
+    <div class="items-container">
+        <button class="item rock">
+            <img src="./resources/rock.svg" alt="">
+            <h2>ROCK</h2>
+        </button>
+        <button class="item paper">
+            <img src="./resources/paper.svg" alt="">
+            <h2>PAPER</h2>
+        </button>
+        <button class="item scissors">
+            <img src="./resources/scissors.svg" alt="">
+            <h2>SCISSORS</h2>
+        </button>
     </div>
 
-    <div class="display-results"></div>
+    <div class="round-status-container">
+        <h1 class="round-status"></h1>
+    </div>
+
+    <div class="display-results">
+        <div class="user-score"></div>
+        <div class="computer-score"></div>
+        <div class="draw-score"></div>
+    </div>
 </body>
 </html>
