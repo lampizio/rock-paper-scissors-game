@@ -16,8 +16,13 @@ function playRound(event) {
 
     let userRoundStatus = getUserRoundStatus(computerChoice, userChoice);
 
-    processUserRoundStatus(userRoundStatus, computerChoice, userChoice);
+    let resultStr = processUserRoundStatus(userRoundStatus, computerChoice, userChoice);
+    displayRoundResults(resultStr);
 
+}
+
+function displayRoundResults(result) {
+    document.querySelector(".display-results").innerText= result;
 }
 
 function getUserChoiceFromClass(className) {
@@ -47,13 +52,13 @@ function getUserRoundStatus(computerChoice, userChoice) {
 function processUserRoundStatus(userRoundStatus, computerChoice, userChoice) {
     if(userRoundStatus) {
         SCORE.win++;
-        console.log(`You win\nComputer: ${computerChoice}\nYou: ${userChoice}`)
+        return `You win\nComputer: ${computerChoice}\nYou: ${userChoice}`;
     } else if (userRoundStatus === null) {
         SCORE.draw++;
-        console.log(`Draw\nComputer: ${computerChoice}\nYou: ${userChoice}`)
+        return `Draw\nComputer: ${computerChoice}\nYou: ${userChoice}`;
     } else {
         SCORE.lose++;
-        console.log(`You lose\nComputer: ${computerChoice}\nYou: ${userChoice}`)
+        return `You lose\nComputer: ${computerChoice}\nYou: ${userChoice}`;
     }
 }
 
@@ -95,8 +100,6 @@ function main() {
     document.querySelector(".rock").addEventListener("click", playRound);
     document.querySelector(".paper").addEventListener("click", playRound);
     document.querySelector(".scissors").addEventListener("click", playRound);
-
-    console.table(SCORE);
 }
 
 main();
