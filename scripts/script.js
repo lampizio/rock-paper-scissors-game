@@ -19,13 +19,14 @@ function playRound(event) {
 
     let userRoundStatus = getUserRoundStatus(computerChoice, userChoice);
 
-    let resultStr = processUserRoundStatus(userRoundStatus);
-    displayRoundResults(resultStr);
+    let result = processUserRoundStatus(userRoundStatus, computerChoice);
+    displayRoundResults(result);
 
 }
 
 function displayRoundResults(result) {
-    document.querySelector(".round-status").innerText = result;
+    document.querySelector(".round-status").textContent = result[0];
+    document.querySelector(".computer-choice").textContent = "Computer chose: " + result[1].toUpperCase();
 }
 
 function getUserChoiceFromClass(className) {
@@ -51,16 +52,16 @@ function getUserRoundStatus(computerChoice, userChoice) {
     }
 }
 
-function processUserRoundStatus(userRoundStatus) {
+function processUserRoundStatus(userRoundStatus, computerChoice) {
     if(userRoundStatus) {
         SCORE.win++;
-        return "You win!";
+        return ["You win!", computerChoice];
     } else if (userRoundStatus === null) {
         SCORE.draw++;
-        return "Draw!";
+        return ["Draw!", computerChoice];
     } else {
         SCORE.lose++;
-        return "You lose ;(";
+        return ["You lose ;(", computerChoice];
     }
 }
 
