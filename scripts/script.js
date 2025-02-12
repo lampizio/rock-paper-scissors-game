@@ -15,7 +15,7 @@ const MAX_ROUNDS = 5;
 function playRound(event) {
     let userChoice = getUserChoiceFromClass(event.target.classList);
     let computerChoice = getComputerChoice();
-    console.log(`Computer choice: ${computerChoice}`)
+    console.log(`Computer choice: ${computerChoice }`)
 
     let userRoundStatus = getUserRoundStatus(computerChoice, userChoice);
 
