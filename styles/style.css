@@ -2,17 +2,24 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: #EEEEEE;
+    font-family: "bangers", sans-serif;
 }
 
 :root {
-    --body-bg-color: antiquewhite;
-    --sub-section-bg-color: beige;
-    --item-bg-color: grey;
+    --body-bg-color: #222831;
+    --sub-section-bg-color: #31363F;
+    --item-bg-color: #222831;
 
-    --press-item-bg-color: aqua;
+    --press-item-bg-color: #3B1C32;
 
-    --hover-item-bg-color: blue;
-    --hover-item-txt-color: white;
+    --hover-item-bg-color: #6A1E55;
+    --hover-item-txt-color: #EEEEEE;
+}
+
+@font-face {
+    font-family: bangers;
+    src: url(../fonts/Bangers/Bangers-Regular.ttf);
 }
 
 body {
@@ -31,9 +38,8 @@ body {
     flex-wrap: wrap;
     align-content: center;
     gap: 20px;
+    flex: 2;
 
-    max-width: 700px;
-    min-height: 300px;
     padding: 20px;
 
     background-color: var(--sub-section-bg-color);
@@ -46,11 +52,14 @@ body {
     justify-content: center;
     width: 12em;
     height: 15em;
+    gap: 5px;
 
     background-color: var(--item-bg-color);
 
+    border-radius: 20px;
+    border-image: linear-gradient(to right, rgb(226, 214, 84), rgb(255, 191, 29)) 1;
+    border-style: none;
     cursor: pointer;
-    border: none;
 }
 
 .item img {
@@ -69,17 +78,58 @@ body {
 
 .round-status-container {
     flex-direction: column;
-    max-width: 700px;
-    min-height: 200px;
+    flex: 1;
+
+    padding: 20px;
+
+    min-height: 107px;
 
     background-color: var(--sub-section-bg-color);
 }
 
+.round-status,
+.computer-choice {
+    text-align: center;
+}
+
+.display-results-container {
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--sub-section-bg-color);
+}
+
 .round-status-container,
-.items-container {
+.items-container,
+.display-results-container {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    margin: 20px auto;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 20px;
+
+    max-width: 1000px;
+    min-height: 600px;
+
+    margin: auto;
+}
+
+.game-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    gap: 20px;
+    justify-content: stretch;
+    align-items: stretch;
+    flex: 3;
+}
+
+.display-results-container {
+    flex: 1;
+    padding: 20px;
 }

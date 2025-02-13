@@ -9,32 +9,41 @@
 <body>
     <script defer src="./scripts/script.js"></script>
 
+    <audio src="./audio/win.mp3" id="win"></audio>
+    <audio src="./audio/draw.mp4" id="draw"></audio>
+    <audio src="./audio/lose.mp3" id="lose"></audio>
+
     <h1 class="title">Rock Paper Scissors</h1>
 
-    <div class="items-container">
-        <button class="item rock">
-            <img src="./resources/rock.svg" alt="">
-            <h2>ROCK</h2>
-        </button>
-        <button class="item paper">
-            <img src="./resources/paper.svg" alt="">
-            <h2>PAPER</h2>
-        </button>
-        <button class="item scissors">
-            <img src="./resources/scissors.svg" alt="">
-            <h2>SCISSORS</h2>
-        </button>
-    </div>
+    <div class="main">
+        <div class="game-section">
+            <div class="items-container">
+                <button class="item rock">
+                    <img src="./resources/rock.svg" alt="">
+                    <h2>ROCK</h2>
+                </button>
+                <button class="item paper">
+                    <img src="./resources/paper.svg" alt="">
+                    <h2>PAPER</h2>
+                </button>
+                <button class="item scissors">
+                    <img src="./resources/scissors.svg" alt="">
+                    <h2>SCISSORS</h2>
+                </button>
+            </div>
+        
+            <div class="round-status-container">
+                <h1 class="round-status">Choose the item above</h1>
+                <h2 class="computer-choice"></h2>
+            </div>
+        </div>
 
-    <div class="round-status-container">
-        <h1 class="round-status">Choose the item above</h1>
-        <h2 class="computer-choice"></h2>
-    </div>
-
-    <div class="display-results-container">
-        <div class="user-score"></div>
-        <div class="computer-score"></div>
-        <div class="draw-score"></div>
+        <div class="display-results-container">
+            <h1 class="score">SCORE</h1>
+            <h2 class="user-score"></h2>
+            <h2 class="computer-score"></h2>
+            <h2 class="draw-score"></h2>
+        </div>
     </div>
 </body>
 </html>
