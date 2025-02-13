@@ -30,7 +30,7 @@ body {
 
 .title {
     text-align: center;
-
+    font-size: 50px;
     margin: 20px 0 10px;
 }
 
@@ -67,6 +67,10 @@ body {
     max-height: 100px;
 }
 
+.item h2 {
+    font-size: 25px;;
+}
+
 .item:hover {
     background-color: var(--hover-item-bg-color);
     color: var(--hover-item-txt-color);
@@ -87,9 +91,17 @@ body {
     background-color: var(--sub-section-bg-color);
 }
 
+.round-status-container h2{
+    font-size: 30px;
+}
+
 .round-status,
 .computer-choice {
     text-align: center;
+}
+
+.round-status span {
+    font-size: 45px;
 }
 
 .display-results-container {
@@ -132,9 +144,15 @@ body {
 .display-results-container {
     flex: 1 1 116px;
     padding: 20px;
+    gap: 3px;
+}
+
+.display-results-container h2 {
+    font-size: 30px;
 }
 
 .score {
-      display: block;
+    display: block;
     min-width: 116px;
+    font-size: 40px;
 }

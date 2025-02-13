@@ -30,6 +30,7 @@ function displayRoundResults(result, userRoundStatus) {
     document.querySelector(".user-score").textContent = "You: " + SCORE.win;
     document.querySelector(".computer-score").textContent = "Computer: " + SCORE.lose;
     document.querySelector(".draw-score").textContent = "Draw: " + SCORE.draw;
+    document.querySelector(".total-score").textContent = "Total: " + (SCORE.win + SCORE.lose + SCORE.draw);
 
     if (userRoundStatus) {
         document.querySelector("#win").play();
